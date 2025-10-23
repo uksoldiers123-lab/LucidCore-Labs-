@@ -1,0 +1,208 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LucidCore Labs — We create apps, ideas, and the engine behind them</title>
+  <meta name="description" content="LucidCore Labs designs and ships products, powers a multi‑app ecosystem, and maintains a USD‑pegged currency layer so experiences can move with users across apps."/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #0b0f17;
+      --card: rgba(255,255,255,0.06);
+      --muted: #a7b0c0;
+      --text: #e9eefc;
+      --accent1: #00e5ff;/* neon cyan */
+      --accent2: #7a3cff;/* electric purple */
+      --ring: rgba(122,60,255,0.45);
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
+      color:var(--text); background: radial-gradient(1200px 800px at 10% -10%, rgba(122,60,255,.25), transparent 60%),
+                         radial-gradient(1000px 700px at 110% 10%, rgba(0,229,255,.2), transparent 60%), var(--bg);
+      line-height:1.6; letter-spacing:.2px;
+    }
+    a{color:inherit; text-decoration:none}
+    .container{width:min(1200px, 92vw); margin:0 auto}
+    .gradient-text{background:linear-gradient(90deg,var(--accent1),var(--accent2)); -webkit-background-clip:text; background-clip:text; color:transparent}
+    .btn{display:inline-flex; align-items:center; gap:.6rem; padding:.9rem 1.1rem; border-radius:16px; font-weight:600; background:linear-gradient(135deg,var(--accent1),var(--accent2)); color:#0a0e15; box-shadow:0 8px 24px rgba(0,229,255,.18), 0 12px 28px rgba(122,60,255,.18); border:0}
+    .btn.ghost{background:transparent; color:var(--text); border:1px solid rgba(255,255,255,.12)}
+    header{position:sticky; top:0; z-index:50; backdrop-filter:saturate(180%) blur(14px); background:rgba(8,12,20,.65); border-bottom:1px solid rgba(255,255,255,.05)}
+    .nav{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
+    .brand{display:flex; align-items:center; gap:.8rem; font-weight:800; letter-spacing:.2px}
+    .brand .logo{width:36px; height:36px; border-radius:10px; background:radial-gradient(60% 80% at 30% 20%, rgba(255,255,255,.3), rgba(255,255,255,.05) 60%), linear-gradient(135deg, var(--accent1), var(--accent2)); box-shadow:0 10px 30px var(--ring)}
+    .nav a{opacity:.9}
+    .nav ul{display:flex; gap:1.2rem; list-style:none; padding:0; margin:0}/* hero */
+.hero{padding:clamp(56px,10vw,120px) 0 72px}
+.hero h1{font-size:clamp(2.2rem, 3.6vw + 1.2rem, 4rem); line-height:1.1; margin:0 0 14px}
+.hero p{color:var(--muted); max-width:780px; margin:0 0 26px}
+.cta{display:flex; gap:12px; flex-wrap:wrap}
+
+/* sections */
+section{padding:72px 0}
+.grid{display:grid; gap:22px}
+.g-3{grid-template-columns:repeat(3, minmax(0,1fr))}
+.g-2{grid-template-columns:repeat(2, minmax(0,1fr))}
+@media (max-width:900px){ .g-3{grid-template-columns:1fr 1fr} }
+@media (max-width:680px){ .g-3,.g-2{grid-template-columns:1fr} }
+
+.card{background:var(--card); border:1px solid rgba(255,255,255,.08); border-radius:22px; padding:22px; box-shadow:var(--shadow)}
+.card h3{margin:6px 0 8px}
+.eyebrow{font-size:.78rem; letter-spacing:.18em; text-transform:uppercase; color:#b7c3da; opacity:.8}
+
+/* icon circle */
+.ic{width:46px; height:46px; display:grid; place-items:center; border-radius:12px; background:linear-gradient(135deg,rgba(0,229,255,.12),rgba(122,60,255,.12)); border:1px solid rgba(255,255,255,.12)}
+.ic svg{width:22px; height:22px}
+
+.diagram{display:grid; gap:18px; grid-template-columns:1.2fr .8fr}
+@media (max-width:900px){ .diagram{grid-template-columns:1fr;}}
+.diagram .stack{display:grid; gap:14px}
+.chip{padding:14px 16px; border-radius:14px; background:linear-gradient(135deg, rgba(0,229,255,.08), rgba(122,60,255,.08)); border:1px dashed rgba(255,255,255,.12)}
+
+/* footer */
+footer{padding:56px 0; color:#b7c3da; border-top:1px solid rgba(255,255,255,.06)}
+.muted{color:var(--muted)}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand"><div class="logo" aria-hidden></div><span>LucidCore <span class="gradient-text">Labs</span></span></div>
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="#what">What we do</a></li>
+          <li><a href="#ecosystem">Ecosystem</a></li>
+          <li><a href="#showcase">Products</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>  <main>
+    <section class="hero container">
+      <p class="eyebrow">We build products — and the rails beneath them</p>
+      <h1>
+        We create apps and ideas
+        <span class="gradient-text">— and power the economy that connects them.</span>
+      </h1>
+      <p>
+        LucidCore Labs is a product studio and technology holding company. We design consumer apps, creator tools, and games —
+        all connected by a shared account, a portable balance, and interoperable micro‑currencies. Users move value and identity across experiences with one tap.
+      </p>
+      <div class="cta">
+        <a class="btn" href="#contact">Start a project</a>
+        <a class="btn ghost" href="#showcase">See our products</a>
+      </div>
+    </section><section id="what">
+  <div class="container">
+    <p class="eyebrow">What we do</p>
+    <div class="grid g-3">
+      <div class="card">
+        <div class="ic" aria-hidden>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
+        </div>
+        <h3 class="gradient-text">Design & Build Products</h3>
+        <p class="muted">From sketch to store: iOS/Android apps, responsive web, and creator platforms. Tight visuals, fast iteration, real traction.</p>
+      </div>
+      <div class="card">
+        <div class="ic" aria-hidden>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        </div>
+        <h3 class="gradient-text">Operate an Ecosystem</h3>
+        <p class="muted">Single sign‑on, shared profiles, and cross‑app entitlements. One account follows the user across everything we ship.</p>
+      </div>
+      <div class="card">
+        <div class="ic" aria-hidden>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h16M12 4v16"/></svg>
+        </div>
+        <h3 class="gradient-text">Run the Currency Layer</h3>
+        <p class="muted">A USD‑pegged unit and branded app coins. Users buy once, spend anywhere in our network — transparent fees, instant swaps.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="ecosystem">
+  <div class="container">
+    <p class="eyebrow">How it connects</p>
+    <h2 class="gradient-text" style="margin-top:6px;margin-bottom:12px">The LucidCore Stack</h2>
+    <div class="diagram card">
+      <div class="stack">
+        <div class="chip"><strong>Identity</strong> — unified login, KYC-ready profiles, badges, and permissions across apps.</div>
+        <div class="chip"><strong>Balance</strong> — portable wallet with a USD‑pegged unit and per‑app coins (skins) for local experiences.</div>
+        <div class="chip"><strong>Commerce</strong> — purchases, peer‑to‑peer transfers, in‑app stores, and creator payouts.</div>
+        <div class="chip"><strong>Affiliates</strong> — tiered referrals that share a % of net fees with users who grow the network.</div>
+        <div class="chip"><strong>Observability</strong> — live dashboards: revenue, cohort retention, fraud/risk signals, and compliance exports.</div>
+      </div>
+      <div class="stack">
+        <div class="card" style="height:100%">
+          <h3 style="margin-top:0">Why it matters</h3>
+          <ul class="muted">
+            <li>Users keep value as they move between entertainment, social, and finance.</li>
+            <li>Every app ships faster by reusing identity, wallet, and marketplace components.</li>
+            <li>Creators earn more: tips, shops, wishlists, and referral share — all in one ledger.</li>
+          </ul>
+          <p class="muted" style="margin-top:10px">We don’t just make apps. We make the rails so products can compound.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="showcase">
+  <div class="container">
+    <p class="eyebrow">Selected products</p>
+    <div class="grid g-3">
+      <article class="card">
+        <h3 class="gradient-text" style="margin-top:0">SnowApp</h3>
+        <p class="muted">A sleek wallet for deposits, cash‑outs, and cross‑app spending. The financial backbone that powers the network.</p>
+        <p class="muted"><strong>Highlights:</strong> USD‑pegged unit, instant swaps to app coins, cards & payouts roadmap.</p>
+      </article>
+      <article class="card">
+        <h3 class="gradient-text" style="margin-top:0">PeekR</h3>
+        <p class="muted">A creator platform with wishlists, tips, and shops. Fans support directly; creators cash out through the shared wallet.</p>
+        <p class="muted"><strong>Highlights:</strong> Badges, progress bars, referral earnings view, shop integrations.</p>
+      </article>
+      <article class="card">
+        <h3 class="gradient-text" style="margin-top:0">Nova Games</h3>
+        <p class="muted">Competitive play — cards and casual titles — using branded coins as entry and rewards, all reconciling to one balance.</p>
+        <p class="muted"><strong>Highlights:</strong> Rooms & tournaments, sticker stores, ranked tables.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="card">
+      <div class="grid g-2">
+        <div>
+          <h2 class="gradient-text" style="margin-top:0">Start something with us</h2>
+          <p class="muted">Have a product in mind or want to plug into the ecosystem? Tell us a little about your idea and how fast you want to move.</p>
+          <p class="muted">Email: <a href="mailto:admin@aftsolutionsllc.com">admin@aftsolutionsllc.com</a></p>
+        </div>
+        <form onsubmit="event.preventDefault(); this.reset(); alert('Thanks! We\'ll be in touch.');">
+          <label>Name<br><input required placeholder="Your name" style="width:100%;padding:12px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.04);color:var(--text)"></label>
+          <div style="height:10px"></div>
+          <label>Email<br><input type="email" required placeholder="you@domain.com" style="width:100%;padding:12px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.04);color:var(--text)"></label>
+          <div style="height:10px"></div>
+          <label>What are you building?<br><textarea required rows="5" placeholder="Tell us about the app, timeline, and goals" style="width:100%;padding:12px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.04);color:var(--text)"></textarea></label>
+          <div style="height:14px"></div>
+          <button class="btn" type="submit">Send</button>
+          <button class="btn ghost" type="button" onclick="window.scrollTo({top:0,behavior:'smooth'})">Back to top</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+  </main>  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;align-items:center">
+      <div class="brand"><div class="logo" aria-hidden></div><span>LucidCore <span class="gradient-text">Labs</span></span></div>
+      <small class="muted">© <span id="y"></span> LucidCore Labs LLC — All rights reserved.</small>
+    </div>
+  </footer>  <script>document.getElementById('y').textContent = new Date().getFullYear()</script></body>
+</html>
