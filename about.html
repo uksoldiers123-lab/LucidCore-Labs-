@@ -4,128 +4,55 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>About | LucidCore Labs</title>
-  <meta name="description" content="About LucidCore Labs — founded by Samuel R. Arnold (SRA) and Adrian Tennison, building next-gen fintech, gaming, and creator platforms." />
-  <link rel="icon" type="image/png" href="images/lucidcore-icon.png" />
+  <meta name="description" content="About LucidCore Labs — an early-stage startup founded by Samuel R. Arnold (SRA) and Adrian Tennison, building next-gen fintech, gaming, and creator platforms." />
+  <link rel="icon" type="image/png" href="lucidcore-icon.png" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
   <style>
-    :root {
-      --cyan:#00e5ff;--purple:#7a3cff;
-      --bg:#0b0f17;--surface:#121826;
-      --text:#e9eefc;--muted:#a7b0c0;
-      --line:rgba(255,255,255,.08);
-      --shadow:0 20px 50px rgba(0,0,0,.35);
-      --ease:cubic-bezier(.22,.61,.36,1);
-    }
-    [data-theme="light"] {
-      --bg:#f7f9ff;--surface:#fff;
-      --text:#0b0f17;--muted:#4a5568;
-      --line:rgba(0,0,0,.08);
-    }
-    * {box-sizing:border-box;margin:0;padding:0;}
-    body {font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;}
+    :root{--cyan:#00e5ff;--purple:#7a3cff;--bg:#0b0f17;--surface:#121826;--text:#e9eefc;--muted:#a7b0c0;--line:rgba(255,255,255,.08);--shadow:0 20px 50px rgba(0,0,0,.35);--ease:cubic-bezier(.22,.61,.36,1)}
+    [data-theme="light"]{--bg:#f7f9ff;--surface:#fff;--text:#0b0f17;--muted:#4a5568;--line:rgba(0,0,0,.08)}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
 
-    header {
-      position:sticky;top:0;z-index:10;
-      background:rgba(10,14,21,0.8);backdrop-filter:blur(12px);
-      border-bottom:1px solid var(--line);
-    }
-    .nav {
-      max-width:1100px;margin:auto;
-      display:flex;align-items:center;
-      justify-content:space-between;
-      padding:14px 20px;
-    }
-    .brand {
-      display:flex;align-items:center;gap:.5rem;
-      font-weight:800;font-size:1.2rem;
-      background:linear-gradient(90deg,var(--cyan),var(--purple));
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-    }
-    .brand img {width:36px;height:36px;border-radius:8px;}
-    .desktop-nav ul {
-      display:flex;list-style:none;gap:1.5rem;
-      flex-wrap:wrap;justify-content:center;
-    }
-    .desktop-nav a {
-      color:var(--text);opacity:.9;
-      text-decoration:none;font-weight:600;
-      transition:opacity .25s var(--ease);
-    }
-    .desktop-nav a:hover,.desktop-nav a.active {opacity:1;}
-    .btn-icon {
-      display:inline-grid;place-items:center;
-      width:38px;height:38px;border-radius:10px;
-      border:1px solid var(--line);
-      background:var(--surface);color:var(--text);
-    }
-    .hamburger{display:none;}
+    header{position:sticky;top:0;z-index:10;background:rgba(10,14,21,0.8);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+    .nav{max-width:1100px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:14px 20px}
+    .brand{display:flex;align-items:center;gap:.5rem;font-weight:800;font-size:1.2rem;background:linear-gradient(90deg,var(--cyan),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    .brand img{width:36px;height:36px;border-radius:8px}
+    .desktop-nav ul{display:flex;list-style:none;gap:1.5rem;flex-wrap:wrap;justify-content:center}
+    .desktop-nav a{color:var(--text);opacity:.9;text-decoration:none;font-weight:600;transition:opacity .25s var(--ease)}
+    .desktop-nav a:hover,.desktop-nav a.active{opacity:1}
+    .btn-icon{display:inline-grid;place-items:center;width:38px;height:38px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--text)}
+    .hamburger{display:none}
     @media(max-width:760px){.desktop-nav{display:none}.hamburger{display:inline-grid}}
 
-    .hero {
-      text-align:left;
-      padding:100px 24px 70px;
-      background:linear-gradient(160deg,#0f1726 0%,#0c121f 55%,#0f1626 100%);
-      box-shadow:var(--shadow);
-      border-bottom:1px solid var(--line);
-    }
-    .hero .container {
-      max-width:1100px;margin:auto;
-      display:flex;align-items:center;gap:1rem;
-      flex-wrap:wrap;
-    }
-    .hero img {width:50px;height:50px;border-radius:10px;}
-    .hero h1 {
-      font-size:clamp(2.2rem,4vw,3.2rem);
-      background:linear-gradient(90deg,var(--cyan),var(--purple));
-      -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-      margin-bottom:16px;
-    }
-    .hero p {color:var(--muted);font-size:1.15rem;max-width:700px;margin:0;}
+    .hero{text-align:left;padding:100px 24px 70px;background:linear-gradient(160deg,#0f1726 0%,#0c121f 55%,#0f1626 100%);box-shadow:var(--shadow);border-bottom:1px solid var(--line)}
+    .hero .container{max-width:1100px;margin:auto;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+    .hero img{width:50px;height:50px;border-radius:10px}
+    .hero h1{font-size:clamp(2.2rem,4vw,3.2rem);background:linear-gradient(90deg,var(--cyan),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:16px}
+    .hero p{color:var(--muted);font-size:1.05rem;max-width:700px;margin:0}
 
-    section {padding:60px 20px;}
-    h2.title {text-align:center;margin-bottom:40px;}
+    section{padding:60px 20px}
+    h2.title{text-align:center;margin-bottom:40px}
 
-    .grid {
-      max-width:1100px;margin:auto;
-      display:grid;gap:20px;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    }
-    .card {
-      background:var(--surface);
-      border:1px solid var(--line);
-      border-radius:18px;
-      padding:24px;
-      text-align:center;
-      box-shadow:0 10px 30px rgba(0,0,0,.25);
-    }
-    .card img {
-      width:100px;height:100px;border-radius:50%;
-      margin-bottom:14px;object-fit:cover;
-      background:linear-gradient(135deg,var(--cyan),var(--purple));
-      padding:3px;
-    }
-    .muted {color:var(--muted);}
-    .center {text-align:center;}
+    .grid{max-width:1100px;margin:auto;display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+    .card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:24px;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+    .card img{width:100px;height:100px;border-radius:50%;margin-bottom:14px;object-fit:cover;background:linear-gradient(135deg,var(--cyan),var(--purple));padding:3px}
+    .muted{color:var(--muted)}
+    .center{text-align:center}
 
-    footer {
-      border-top:1px solid var(--line);
-      text-align:center;color:#8a94b0;
-      padding:40px 10px;font-size:.9rem;
-    }
+    footer{border-top:1px solid var(--line);text-align:center;color:#8a94b0;padding:40px 10px;font-size:.9rem}
   </style>
 </head>
 <body>
   <header>
     <div class="nav">
       <button class="btn-icon hamburger" id="openMenu" aria-label="Open menu">☰</button>
-      <div class="brand"><img src="images/lucidcore-icon.png" alt="LucidCore icon"/> LucidCore Labs</div>
+      <div class="brand"><img src="lucidcore-icon.png" alt="LucidCore icon"/> LucidCore Labs</div>
       <div class="desktop-nav">
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="index.html#what">What We Do</a></li>
           <li><a href="index.html#products">Our Products</a></li>
-          <li><a href="#founders">Founders</a></li>
+          <li><a href="#founders" class="active">Founders</a></li>
           <li><a href="investors.html">Investors</a></li>
         </ul>
       </div>
@@ -135,10 +62,10 @@
 
   <section class="hero">
     <div class="container">
-      <img src="images/lucidcore-icon.png" alt="LucidCore Labs Logo">
+      <img src="lucidcore-icon.png" alt="LucidCore Labs Logo">
       <div>
         <h1>About LucidCore Labs</h1>
-        <p>A creative technology company founded by <strong>Samuel R. Arnold (SRA)</strong> and <strong>Adrian Tennison</strong>, dedicated to building digital ecosystems that connect finance, creativity, and innovation.</p>
+        <p>LucidCore Labs is an early-stage startup and creative technology studio founded by <strong>Samuel R. Arnold (SRA)</strong> and <strong>Adrian Tennison</strong>. We build interconnected apps that link finance, creativity, and community.</p>
       </div>
     </div>
   </section>
@@ -149,14 +76,14 @@
       <div class="card">
         <img src="images/founder-sra-placeholder.png" alt="Samuel R. Arnold silhouette placeholder">
         <h3>Samuel R. Arnold (SRA)</h3>
-        <p class="muted">Founder &amp; Creative / Technical Lead</p>
-        <p>Samuel drives LucidCore’s ecosystem vision — bridging fintech, gaming, and creator experiences through innovative design, brand identity, and product development.</p>
+        <p class="muted">Founder • Creative & Technical Lead</p>
+        <p>Samuel drives ecosystem vision — product design, brand identity, and the connective layer across apps.</p>
       </div>
       <div class="card">
         <img src="images/founder-adrian-placeholder.png" alt="Adrian Tennison silhouette placeholder">
         <h3>Adrian Tennison</h3>
-        <p class="muted">Co-Founder &amp; Operations / Strategy</p>
-        <p>Adrian oversees company strategy, operations, and partnerships. His role ensures sustainable growth, product compliance, and long-term scalability across the LucidCore ecosystem.</p>
+        <p class="muted">Co-Founder • Strategy & Operations</p>
+        <p>Adrian leads operations, partnerships, and go-to-market — ensuring scale, compliance, and sustainable growth.</p>
       </div>
     </div>
   </section>
@@ -164,31 +91,24 @@
   <section id="overview">
     <h2 class="title">Company Overview</h2>
     <div class="center" style="max-width:850px;margin:auto;">
-      <p>LucidCore Labs functions as the creative and technical backbone for a growing ecosystem of fintech and digital lifestyle products — including SnowApp and PeekR. Each project shares the same DNA of interoperability, scalability, and user empowerment.</p>
-    </div>
-  </section>
-
-  <section id="vision">
-    <h2 class="title">Our Vision</h2>
-    <div class="center" style="max-width:850px;margin:auto;">
-      <p><strong>To power the next digital evolution — where apps, games, and creators share the same ecosystem and financial layer.</strong></p>
+      <p>We operate a connectional ecosystem across finance, social, and gaming. The in-depth design and rails are proprietary trade secrets; additional details are shared with partners under NDA.</p>
     </div>
   </section>
 
   <section id="board">
-    <h2 class="title">Board &amp; Advisors</h2>
+    <h2 class="title">Board & Advisors</h2>
     <div class="grid">
       <div class="card">
         <img src="images/board-placeholder1.png" alt="Board Member Placeholder 1">
         <h3>Position Open</h3>
         <p class="muted">Investor / Advisor</p>
-        <p>Placeholder for future board member or advisor. This section will feature confirmed members as the company expands.</p>
+        <p>Placeholder for a future board member or advisor.</p>
       </div>
       <div class="card">
         <img src="images/board-placeholder2.png" alt="Board Member Placeholder 2">
         <h3>Position Open</h3>
         <p class="muted">Investor / Advisor</p>
-        <p>Placeholder for future board member or advisor. To be filled following investor onboarding.</p>
+        <p>Reserved for confirmed members as the company expands.</p>
       </div>
     </div>
   </section>
