@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Investors | LucidCore Labs</title>
+  <meta name="description" content="LucidCore Labs is building the SnowApp ecosystem and next-gen fintech, gaming, and creator platforms. Learn about investment opportunities." />
+  <link rel="icon" type="image/png" href="images/lucidcore-icon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --cyan:#00e5ff;--purple:#7a3cff;
+      --bg:#0b0f17;--surface:#121826;
+      --text:#e9eefc;--muted:#a7b0c0;
+      --line:rgba(255,255,255,.08);
+      --shadow:0 20px 50px rgba(0,0,0,.35);
+      --ease:cubic-bezier(.22,.61,.36,1);
+    }
+    [data-theme="light"] {
+      --bg:#f7f9ff;--surface:#fff;
+      --text:#0b0f17;--muted:#4a5568;
+      --line:rgba(0,0,0,.08);
+    }
+    * {box-sizing:border-box;margin:0;padding:0;}
+    body {font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;}
+
+    /* Header */
+    header {
+      position:sticky;top:0;z-index:10;
+      background:rgba(10,14,21,0.8);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid var(--line);
+    }
+    .nav {
+      max-width:1100px;margin:auto;
+      display:flex;align-items:center;
+      justify-content:space-between;
+      padding:14px 20px;
+    }
+    .brand {
+      display:flex;align-items:center;gap:.5rem;
+      font-weight:800;font-size:1.2rem;
+      background:linear-gradient(90deg,var(--cyan),var(--purple));
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+    .brand img {width:36px;height:36px;border-radius:8px;}
+    .desktop-nav ul {
+      display:flex;list-style:none;gap:1.5rem;
+      flex-wrap:wrap;justify-content:center;
+    }
+    .desktop-nav a {
+      color:var(--text);opacity:.9;
+      text-decoration:none;font-weight:600;
+      transition:opacity .25s var(--ease);
+    }
+    .desktop-nav a:hover,.desktop-nav a.active {opacity:1;}
+    .btn-icon {
+      display:inline-grid;place-items:center;
+      width:38px;height:38px;border-radius:10px;
+      border:1px solid var(--line);
+      background:var(--surface);color:var(--text);
+    }
+    .hamburger{display:none;}
+    @media(max-width:760px){.desktop-nav{display:none}.hamburger{display:inline-grid}}
+
+    /* Hero */
+    .hero {
+      text-align:left;
+      padding:100px 24px 70px;
+      background:linear-gradient(160deg,#0f1726 0%,#0c121f 55%,#0f1626 100%);
+      box-shadow:var(--shadow);
+      border-bottom:1px solid var(--line);
+    }
+    .hero .container {
+      max-width:1100px;margin:auto;
+      display:flex;align-items:center;gap:1rem;
+      flex-wrap:wrap;
+    }
+    .hero img {
+      width:50px;height:50px;border-radius:10px;
+    }
+    .hero h1 {
+      font-size:clamp(2.2rem,4vw,3.2rem);
+      background:linear-gradient(90deg,var(--cyan),var(--purple));
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      margin-bottom:16px;
+    }
+    .hero p {
+      color:var(--muted);
+      font-size:1.15rem;
+      max-width:700px;
+      margin:0;
+    }
+
+    /* Pitch Sections */
+    section {padding:60px 20px;}
+    h2.title {text-align:center;margin-bottom:30px;}
+    .pitch {
+      max-width:1100px;margin:auto;
+      background:var(--surface);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:30px;
+      box-shadow:0 10px 30px rgba(0,0,0,.25);
+    }
+    .pitch h3 {
+      background:linear-gradient(90deg,var(--cyan),var(--purple));
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      margin-top:25px;margin-bottom:10px;
+    }
+    .pitch p {color:var(--muted);margin-bottom:10px;}
+    .pitch ul {margin-left:20px;color:var(--muted);}
+
+    /* Form */
+    .contact {
+      max-width:600px;margin:auto;
+      background:var(--surface);
+      border:1px solid var(--line);
+      border-radius:18px;padding:24px;
+      box-shadow:0 10px 25px rgba(0,0,0,.25);
+    }
+    form {display:grid;gap:12px;}
+    label {font-weight:600;}
+    input,textarea,select {
+      width:100%;border-radius:12px;
+      border:1px solid var(--line);
+      padding:12px;background:rgba(255,255,255,.05);
+      color:var(--text);
+    }
+    button.btn {
+      display:inline-block;
+      padding:.9rem 1.4rem;
+      border-radius:14px;
+      font-weight:700;
+      background:linear-gradient(135deg,var(--cyan),var(--purple));
+      color:#0b0f17;border:none;cursor:pointer;
+    }
+
+    footer {
+      border-top:1px solid var(--line);
+      text-align:center;
+      color:#8a94b0;
+      padding:40px 10px;
+      font-size:.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <button class="btn-icon hamburger" id="openMenu" aria-label="Open menu">☰</button>
+      <div class="brand"><img src="images/lucidcore-icon.png" alt="LucidCore icon"/> LucidCore Labs</div>
+      <div class="desktop-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#what">What We Do</a></li>
+          <li><a href="index.html#products">Our Products</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+          <li><a href="investors.html" class="active">Investors</a></li>
+        </ul>
+      </div>
+      <div class="controls"><button class="btn-icon" id="themeToggle" aria-label="Toggle light/dark">🌓</button></div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <img src="images/lucidcore-icon.png" alt="LucidCore Labs Logo">
+      <div>
+        <h1>Invest in the Future with LucidCore Labs</h1>
+        <p>LucidCore Labs is building a unified ecosystem of fintech, social, and gaming platforms — including <strong>SnowApp</strong> and <strong>PeekR</strong> — designed to empower creators, gamers, and consumers globally.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="pitch">
+    <h2 class="title">❄️ SnowApp Ecosystem Pitch</h2>
+    <div class="pitch">
+      <h3>The Problem (Ugly Today)</h3>
+      <p>Money apps are fragmented: CashApp, Venmo, PayPal, game wallets, loyalty points, and crypto apps all sit in silos. None of them talk to each other. Fees stack up at every layer. Billions spent on gaming coins/skins are locked forever, with no liquidity. Affiliate programs are weak, offering pennies while users drive growth.</p>
+
+      <h3>The Solution (Beautiful Tomorrow)</h3>
+      <p>SnowApp introduces Snowflakes ❄️ — a universal $1-pegged digital coin that powers payments, games, and lifestyle tools. Snowflakes = the backbone: every deposit, swipe, or transfer is just a ledger change until it touches USD.</p>
+      <p>Game coins = skins: cheap, branded micro-currencies (Peekyz, NovaCoins, etc.) that freely swap back into Snowflakes → USD. Users earn up to 10% of net profit from referrals. Lifestyle expansion includes direct deposit, credit builder, budgeting tools, and affiliate shopping.</p>
+
+      <h3>How It Works</h3>
+      <p>Users load Snowflakes via debit, credit, or bank. Spending with the SnowApp Card converts Snowflakes → USD. P2P transfers stay on the ledger to keep fees minimal. Game coins wrap and unwrap back into Snowflakes → USD, keeping liquidity flowing and value inside the ecosystem.</p>
+
+      <h3>User Tiers</h3>
+      <p><strong>Tier 1 (Free):</strong> Up to $1k referral earnings; $5k/week P2P; $500/day ATM.</p>
+      <p><strong>Tier 2 ($19.99/mo):</strong> Up to $5k referral earnings; $10k/week P2P; $1k/day ATM.</p>
+      <p><strong>Tier 3 ($29.99/mo):</strong> Up to $10k referral earnings; $15k/week P2P; $5k/day ATM.</p>
+
+      <h3>Why This Wins</h3>
+      <p>Unified currency, infinite scalability, aligned incentives, future-ready rails, and low costs. SnowApp keeps liquidity internal, driving efficiency and user growth.</p>
+
+      <h3>Market Opportunity</h3>
+      <p>U.S. P2P Payments → $1.4T annually (Statista, 2025). Global Mobile Gaming Spend → $111B (App Annie, 2024). Neobank Revenue → $5.2B (Grand View Research, 2025). Capturing just 0.1% = $1.5B/year in flow through SnowApp.</p>
+
+      <h3>The Ask (Pre-Seed Round)</h3>
+      <p>We are raising <strong>$500k pre-seed</strong> to take SnowApp from demo to MVP and onboard the first 10,000 users.</p>
+      <ul>
+        <li>$150k → MVP build (wallet + ledger + Stripe/BaaS)</li>
+        <li>$100k → Compliance & legal</li>
+        <li>$150k → Core team</li>
+        <li>$100k → Marketing & growth</li>
+        <li>$50k → Buffer runway</li>
+      </ul>
+      <p>Milestones: MVP launch, 10,000 active users, validated referral loop, proven economics, and traction for a $5M Seed round at $20M+ valuation.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 class="title">Investor Contact Form</h2>
+    <div class="contact">
+      <form onsubmit="event.preventDefault(); alert('Thank you — your information has been securely submitted. Our investor relations team will contact you if there’s a strategic fit.'); this.reset();">
+        <label>Full Name<br><input type="text" required placeholder="Your Name"></label>
+        <label>Company / Fund Name<br><input type="text" placeholder="Optional"></label>
+        <label>Email<br><input type="email" required placeholder="you@domain.com"></label>
+        <label>Investment Interest<br>
+          <select required>
+            <option value="">Select</option>
+            <option>Angel</option>
+            <option>Pre-Seed</option>
+            <option>Seed</option>
+            <option>Strategic Partnership</option>
+            <option>Other</option>
+          </select>
+        </label>
+        <label>Message<br><textarea rows="5" required placeholder="Tell us about your background or interest in LucidCore Labs"></textarea></label>
+        <button class="btn" type="submit">Submit Investment Interest</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>© <span id="y"></span> LucidCore Labs LLC — All Rights Reserved<br>
+    <small>LucidCore Labs treats all investor submissions as confidential.</small></footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    const root = document.documentElement;
+    document.getElementById('themeToggle').addEventListener('click', ()=> {
+      root.dataset.theme = root.dataset.theme === 'light' ? 'dark' : 'light';
+    });
+  </script>
+</body>
+</html>
