@@ -4,29 +4,45 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>About | LucidCore Labs</title>
-  <meta name="description" content="About LucidCore Labs — an early-stage startup founded by Samuel R. Arnold (SRA) and Adrian Tennison, building next-gen fintech, gaming, and creator platforms." />
-  <link rel="icon" type="image/png" href="lucidcore-icon.png" />
+  <meta name="description" content="About LucidCore Labs — an early-stage startup founded by SRA and Adrian Tennison, building next-gen fintech, gaming, and creator platforms." />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
   <style>
-    :root{--cyan:#00e5ff;--purple:#7a3cff;--bg:#0b0f17;--surface:#121826;--text:#e9eefc;--muted:#a7b0c0;--line:rgba(255,255,255,.08);--shadow:0 20px 50px rgba(0,0,0,.35);--ease:cubic-bezier(.22,.61,.36,1)}
+    :root{--cyan:#00e5ff;--purple:#7a3cff;--bg:#0b0f17;--surface:#121826;--text:#e9eefc;--muted:#a7b0c0;--line:rgba(255,255,255,.08);--ease:cubic-bezier(.22,.61,.36,1)}
     [data-theme="light"]{--bg:#f7f9ff;--surface:#fff;--text:#0b0f17;--muted:#4a5568;--line:rgba(0,0,0,.08)}
     *{box-sizing:border-box;margin:0;padding:0}
     body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
 
-    header{position:sticky;top:0;z-index:10;background:rgba(10,14,21,0.8);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-    .nav{max-width:1100px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:14px 20px}
-    .brand{display:flex;align-items:center;gap:.5rem;font-weight:800;font-size:1.2rem;background:linear-gradient(90deg,var(--cyan),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-    .brand img{width:36px;height:36px;border-radius:8px}
-    .desktop-nav ul{display:flex;list-style:none;gap:1.5rem;flex-wrap:wrap;justify-content:center}
-    .desktop-nav a{color:var(--text);opacity:.9;text-decoration:none;font-weight:600;transition:opacity .25s var(--ease)}
+    /* Header */
+    header.site-header{position:sticky;top:0;z-index:1000;background:rgba(10,14,21,.75);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+    .nav-wrap{max-width:1100px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:12px 18px}
+    .brand{display:flex;align-items:center;gap:.55rem;text-decoration:none}
+    .brand .brand-text{font-weight:800;font-size:1.15rem;background:linear-gradient(90deg,var(--cyan),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    .desktop-nav{display:flex}
+    .desktop-nav ul{display:flex;gap:1.25rem;list-style:none;margin:0;padding:0}
+    .desktop-nav a{color:var(--text);text-decoration:none;font-weight:600;opacity:.9;transition:opacity .2s var(--ease)}
     .desktop-nav a:hover,.desktop-nav a.active{opacity:1}
+    .controls{display:flex;gap:.5rem}
     .btn-icon{display:inline-grid;place-items:center;width:38px;height:38px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--text)}
-    .hamburger{display:none}
-    @media(max-width:760px){.desktop-nav{display:none}.hamburger{display:inline-grid}}
+    .menu-toggle{display:none}
+    @media (max-width: 860px){.desktop-nav{display:none}.menu-toggle{display:inline-grid}}
 
-    .hero{text-align:left;padding:100px 24px 70px;background:linear-gradient(160deg,#0f1726 0%,#0c121f 55%,#0f1626 100%);box-shadow:var(--shadow);border-bottom:1px solid var(--line)}
+    .mobile-panel{position:fixed;inset:0;height:100vh;background:rgba(0,0,0,.45);backdrop-filter:blur(2px);display:none;opacity:0;transition:opacity .2s var(--ease)}
+    .mobile-panel.is-open{display:block;opacity:1}
+    .mobile-sheet{position:absolute;top:0;right:0;width:min(92vw,380px);height:100%;background:var(--surface);border-left:1px solid var(--line);transform:translateX(100%);transition:transform .28s var(--ease);box-shadow:0 20px 50px rgba(0,0,0,.35)}
+    .mobile-panel.is-open .mobile-sheet{transform:translateX(0)}
+    .mobile-head{display:flex;align-items:center;justify-content:space-between;padding:14px;border-bottom:1px solid var(--line)}
+    .mobile-brand{display:flex;align-items:center;gap:.6rem;font-weight:800}
+    .mobile-brand .brand-text{background:linear-gradient(90deg,var(--cyan),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    .mobile-nav{padding:10px 12px}
+    .mobile-nav a{display:flex;align-items:center;gap:.65rem;padding:12px 10px;border-radius:12px;text-decoration:none;color:var(--text);font-weight:600;border:1px solid transparent}
+    .mobile-nav a:hover{background:rgba(255,255,255,.05);border-color:var(--line)}
+    .mobile-foot{margin-top:auto;padding:12px;border-top:1px solid var(--line);display:flex;gap:.5rem}
+    .visually-hidden{position:absolute!important;clip:rect(1px,1px,1px,1px);padding:0!important;border:0!important;height:1px!important;width:1px!important;overflow:hidden}
+    body.no-scroll{overflow:hidden}
+
+    /* Page */
+    .hero{text-align:left;padding:100px 24px 70px;background:linear-gradient(160deg,#0f1726 0%,#0c121f 55%,#0f1626 100%);box-shadow:0 20px 50px rgba(0,0,0,.35);border-bottom:1px solid var(--line)}
     .hero .container{max-width:1100px;margin:auto;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
-    .hero img{width:50px;height:50px;border-radius:10px}
     .hero h1{font-size:clamp(2.2rem,4vw,3.2rem);background:linear-gradient(90deg,var(--cyan),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:16px}
     .hero p{color:var(--muted);font-size:1.05rem;max-width:700px;margin:0}
 
@@ -43,26 +59,45 @@
   </style>
 </head>
 <body>
-  <header>
-    <div class="nav">
-      <button class="btn-icon hamburger" id="openMenu" aria-label="Open menu">☰</button>
-      <div class="brand"><img src="lucidcore-icon.png" alt="LucidCore icon"/> LucidCore Labs</div>
-      <div class="desktop-nav">
+  <header class="site-header" role="banner">
+    <div class="nav-wrap">
+      <button class="btn-icon menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobilePanel" aria-label="Open menu">☰</button>
+      <a class="brand" href="index.html"><span class="brand-text">LucidCore Labs</span></a>
+      <nav class="desktop-nav" aria-label="Primary">
         <ul>
-          <li><a href="index.html">Home</a></li>
           <li><a href="index.html#what">What We Do</a></li>
           <li><a href="index.html#products">Our Products</a></li>
-          <li><a href="#founders" class="active">Founders</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+          <li><a class="active" href="about.html">About</a></li>
           <li><a href="investors.html">Investors</a></li>
         </ul>
-      </div>
+      </nav>
       <div class="controls"><button class="btn-icon" id="themeToggle" aria-label="Toggle light/dark">🌓</button></div>
+    </div>
+
+    <div class="mobile-panel" id="mobilePanel" aria-hidden="true">
+      <div class="mobile-sheet" role="dialog" aria-modal="true" aria-labelledby="mobileMenuTitle">
+        <div class="mobile-head">
+          <div class="mobile-brand"><span class="brand-text" id="mobileMenuTitle">LucidCore Labs</span></div>
+          <button class="btn-icon" id="menuClose" aria-label="Close menu">✕</button>
+        </div>
+        <nav class="mobile-nav" aria-label="Mobile">
+          <a href="index.html#what"><span>•</span><span>What We Do</span></a>
+          <a href="index.html#products"><span>•</span><span>Our Products</span></a>
+          <a href="index.html#contact"><span>•</span><span>Contact</span></a>
+          <a href="about.html"><span>•</span><span>About</span></a>
+          <a href="investors.html"><span>•</span><span>Investors</span></a>
+        </nav>
+        <div class="mobile-foot">
+          <button class="btn-icon" id="mobileThemeToggle" aria-label="Toggle light/dark">🌓</button>
+          <span class="visually-hidden" aria-live="polite" id="menuStatus"></span>
+        </div>
+      </div>
     </div>
   </header>
 
   <section class="hero">
     <div class="container">
-      <img src="lucidcore-icon.png" alt="LucidCore Labs Logo">
       <div>
         <h1>About LucidCore Labs</h1>
         <p>LucidCore Labs is an early-stage startup and creative technology studio founded by <strong>Samuel R. Arnold (SRA)</strong> and <strong>Adrian Tennison</strong>. We build interconnected apps that link finance, creativity, and community.</p>
@@ -117,10 +152,28 @@
 
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
-    const root = document.documentElement;
-    document.getElementById('themeToggle').addEventListener('click', ()=> {
-      root.dataset.theme = root.dataset.theme === 'light' ? 'dark' : 'light';
-    });
+
+    (function(){
+      const root=document.documentElement;
+      function toggleTheme(){ root.dataset.theme = root.dataset.theme==='light'?'dark':'light'; try{localStorage.setItem('theme',root.dataset.theme);}catch(e){} }
+      document.getElementById('themeToggle')?.addEventListener('click',toggleTheme);
+      document.getElementById('mobileThemeToggle')?.addEventListener('click',toggleTheme);
+      try{ const saved=localStorage.getItem('theme'); if(saved) root.dataset.theme=saved; }catch(e){}
+    })();
+
+    (function(){
+      const body=document.body, panel=document.getElementById('mobilePanel'), sheet=panel.querySelector('.mobile-sheet');
+      const toggle=document.getElementById('menuToggle'), closeBtn=document.getElementById('menuClose'), status=document.getElementById('menuStatus');
+      const focusable='a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])';
+      let lastFocused=null, trapHandler=null;
+      function openMenu(){ lastFocused=document.activeElement; panel.classList.add('is-open'); panel.setAttribute('aria-hidden','false'); toggle.setAttribute('aria-expanded','true'); body.classList.add('no-scroll'); status.textContent='Menu opened'; setTimeout(()=>{(sheet.querySelector(focusable)||sheet).focus();},0); trapFocus(true);}
+      function closeMenu(){ panel.classList.remove('is-open'); panel.setAttribute('aria-hidden','true'); toggle.setAttribute('aria-expanded','false'); body.classList.remove('no-scroll'); status.textContent='Menu closed'; trapFocus(false); lastFocused && lastFocused.focus(); }
+      toggle.addEventListener('click',openMenu); closeBtn.addEventListener('click',closeMenu);
+      panel.addEventListener('click',(e)=>{ if(!sheet.contains(e.target)) closeMenu(); });
+      window.addEventListener('keydown',(e)=>{ if(e.key==='Escape' && panel.classList.contains('is-open')) closeMenu(); });
+      panel.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
+      function trapFocus(enable){ if(enable){ trapHandler=function(e){ if(e.key!=='Tab')return; const nodes=sheet.querySelectorAll(focusable); if(!nodes.length)return; const first=nodes[0], last=nodes[nodes.length-1]; if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}}; window.addEventListener('keydown',trapHandler);} else if(trapHandler){ window.removeEventListener('keydown',trapHandler); trapHandler=null; } }
+    })();
   </script>
 </body>
 </html>
