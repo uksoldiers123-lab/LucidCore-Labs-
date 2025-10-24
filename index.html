@@ -1,65 +1,240 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>LucidCore Labs — Building Apps & Ideas</title>
-  <link rel="icon" type="image/png" href="images/lucidcore-icon.png" />
+  <meta name="description" content="LucidCore Labs creates apps and ideas, operates a connected ecosystem, and runs a currency layer that moves with users across products. SnowApp and future apps live under one roof."/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: "Inter", Arial, sans-serif;
-      background: #0b0f17;
-      color: #e9eefc;
-      text-align: center;
-      margin: 0;
-      padding: 60px 20px;
+    :root{
+      --cyan:#00e5ff;          /* neon cyan */
+      --purple:#7a3cff;        /* electric purple */
+      --bg:#0b0f17;            /* deep graphite */
+      --surface:#121826;       /* cards */
+      --text:#e9eefc;
+      --muted:#a7b0c0;
+      --line:rgba(255,255,255,.06);
+      --shadow:0 20px 50px rgba(0,0,0,.35);
+      --ring:0 0 0 3px rgba(122,60,255,.35);
+      /* PeekR brand gradient on dark */
+      --peekr-a:#ff6aa8; /* pink */
+      --peekr-b:#c9a7ff; /* lavender */
+      --peekr-c:#ffc9a3; /* peach */
     }
-    h1 {
-      font-size: 2.8rem;
-      margin-bottom: 0.5rem;
-      background: linear-gradient(90deg, #00e5ff, #7a3cff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    p {
-      color: #a7b0c0;
-      font-size: 1.1rem;
-      max-width: 700px;
-      margin: 0 auto 40px;
-    }
-    .icons {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 24px;
-    }
-    .icons img {
-      width: 100px;
-      height: 100px;
-      border-radius: 22px;
-      box-shadow: 0 10px 24px rgba(0,0,0,.4);
-      background: #121826;
-    }
-    footer {
-      margin-top: 60px;
-      color: #7a86a5;
-      font-size: 0.9rem;
-    }
-  </style>
+    [data-theme="light"]{
+      --bg:#f7f9ff;
+      --surface:#ffffff;
+      --text:#0b0f17;
+      --muted:#4a5568;
+      --line:rgba(0,0,0,.08);
+      --shadow:0 16px 40px rgba(0,0,0,.08);
+      --ring:0 0 0 3px rgba(0,229,255,.25);
+    }*, *::before, *::after{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; color:var(--text); background:var(--bg); -webkit-text-size-adjust:100%}
+a{color:inherit; text-decoration:none}
+img{max-width:100%; height:auto; display:block}
+.container{width:min(1120px, 92vw); margin:0 auto}
+
+/* NAV */
+header{position:sticky; top:0; z-index:50; backdrop-filter:saturate(160%) blur(14px); background:color-mix(in oklab, var(--bg) 86%, transparent); border-bottom:1px solid var(--line)}
+.nav{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
+.brand{display:flex; align-items:center; gap:.75rem; font-weight:800}
+.logo{width:36px;height:36px;border-radius:12px;background:radial-gradient(60% 80% at 30% 20%, rgba(255,255,255,.28), rgba(255,255,255,.04) 60%), linear-gradient(135deg,var(--cyan),var(--purple)); box-shadow:0 8px 26px rgba(122,60,255,.35)}
+.nav ul{display:flex; list-style:none; gap:1.2rem; padding:0; margin:0; opacity:.95}
+.nav a{padding:.5rem .4rem; border-radius:8px}
+.nav a:focus-visible{outline:2px solid var(--cyan); outline-offset:2px}
+.theme-toggle{margin-left:12px; border:1px solid var(--line); background:var(--surface); color:var(--text); border-radius:10px; padding:.5rem .7rem; cursor:pointer}
+
+@media (max-width:560px){
+  .nav{gap:10px}
+  .nav ul{gap:.7rem; font-size:.95rem}
+  .brand span{display:none}
+}
+
+/* HERO */
+.hero-wrap{background:linear-gradient(180deg, rgba(0,0,0,0) 40%, color-mix(in oklab, var(--bg) 96%, black) 100%),
+           radial-gradient(1200px 700px at 65% 10%, color-mix(in oklab, var(--purple) 45%, transparent) , transparent 60%),
+           radial-gradient(1200px 700px at 10% 0%, color-mix(in oklab, var(--cyan) 45%, transparent), transparent 60%);}  
+.hero{border-radius:20px; background:linear-gradient(160deg, color-mix(in oklab, var(--bg) 92%, black) 0%, color-mix(in oklab, var(--bg) 96%, black) 55%, color-mix(in oklab, var(--bg) 90%, black) 100%);
+       box-shadow: var(--shadow); padding:clamp(28px,6vw,64px) clamp(16px,5vw,48px) 16px; margin:26px auto 10px; width:min(1120px,92vw); border:1px solid var(--line)}
+.hero h1{font-size:clamp(2rem,3.2vw+1rem,3.6rem); line-height:1.08; text-align:center; margin:8px 0 12px}
+.hero p{color:var(--muted); text-align:center; max-width:780px; margin:0 auto 24px}
+.cta{display:flex; justify-content:center}
+.btn{display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:.9rem 1.2rem; border-radius:14px; font-weight:700; color:color-mix(in oklab, var(--bg) 96%, black); background:linear-gradient(135deg,var(--cyan),var(--purple)); border:none; box-shadow:0 10px 28px rgba(0,229,255,.18), 0 12px 30px rgba(122,60,255,.18)}
+.btn:focus-visible{outline:2px solid var(--cyan); outline-offset:2px}
+
+/* FEATURE STRIP */
+.strip{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; padding:16px; background:color-mix(in oklab, var(--surface) 92%, transparent); border-top:1px solid var(--line); border-bottom:1px solid var(--line)}
+.tile{background:linear-gradient(180deg, color-mix(in oklab, var(--surface) 94%, transparent), color-mix(in oklab, var(--surface) 88%, transparent)); border:1px solid var(--line); border-radius:16px; padding:16px; box-shadow:0 8px 22px rgba(0,0,0,.18)}
+.tile h4{margin:0 0 6px}
+@media (max-width:720px){ .strip{grid-template-columns:1fr} }
+
+/* WHAT WE DO */
+section{padding:56px 0}
+.eyebrow{font-size:.78rem; letter-spacing:.18em; text-transform:uppercase; color:#b7c3da; opacity:.85; text-align:center}
+h2.title{text-align:center; margin:6px 0 28px; font-size:clamp(1.5rem,1.2vw+1.1rem,2.1rem)}
+.grid3{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
+@media (max-width:900px){ .grid3{grid-template-columns:1fr 1fr} }
+@media (max-width:640px){ .grid3{grid-template-columns:1fr} }
+.card{background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:22px; box-shadow:0 10px 28px rgba(0,0,0,.24)}
+.ic{width:46px; height:46px; display:grid; place-items:center; border-radius:12px; background:linear-gradient(135deg, color-mix(in oklab, var(--cyan) 35%, transparent), color-mix(in oklab, var(--purple) 35%, transparent)); border:1px solid rgba(255,255,255,.1); margin-bottom:10px}
+.muted{color:var(--muted)}
+
+/* PRODUCTS */
+.cards{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
+@media (max-width:900px){ .cards{grid-template-columns:1fr 1fr} }
+@media (max-width:640px){ .cards{grid-template-columns:1fr} }
+.product{background:linear-gradient(180deg, color-mix(in oklab, var(--surface) 94%, transparent), color-mix(in oklab, var(--surface) 88%, transparent)); border:1px solid var(--line); border-radius:18px; padding:20px; text-align:left; position:relative; overflow:hidden}
+.product a{display:block; color:inherit}
+.badge{display:inline-block; font-size:.72rem; padding:6px 10px; border-radius:999px; border:1px solid var(--line); color:#cdd6e8; opacity:.9}
+.icon-wrap{width:56px; height:56px; border-radius:14px; display:grid; place-items:center; margin:8px 0 10px; border:1px solid rgba(255,255,255,.1); background:linear-gradient(135deg, color-mix(in oklab, var(--cyan) 30%, transparent), color-mix(in oklab, var(--purple) 30%, transparent))}
+.icon-wrap svg{width:28px;height:28px}
+
+/* CONTACT */
+form{display:grid; gap:12px}
+input,textarea{width:100%; padding:12px 14px; border-radius:14px; border:1px solid color-mix(in oklab, var(--line) 80%, transparent); background:color-mix(in oklab, var(--surface) 92%, transparent); color:var(--text)}
+
+footer{padding:56px 0; border-top:1px solid var(--line); color:#b7c3da}
+
+/* SAFE AREAS */
+@supports (padding: max(0px)){
+  body{padding-left:max(0px, env(safe-area-inset-left)); padding-right:max(0px, env(safe-area-inset-right))}
+}
+
+.app-icon{width:48px;height:48px;border-radius:12px;object-fit:cover;display:block} </style>
+
 </head>
 <body>
-  <h1>LucidCore Labs</h1>
-  <p>Innovating apps and digital ecosystems — including <strong>SnowApp</strong>, <strong>PeekR</strong>, and future projects under one connected vision.</p>
-  <div class="icons">
-    <img src="images/lucidcore-icon.png" alt="LucidCore Icon" />
-    <img src="images/snowapp-icon.png" alt="SnowApp Icon" />
-    <img src="images/peekr-icon.png" alt="PeekR Icon" />
-  </div>
-  <footer>© <span id="y"></span> LucidCore Labs LLC — All Rights Reserved</footer>
+  <header>
+    <div class="container nav">
+      <div class="brand"><div class="logo" aria-hidden></div><span>LucidCore</span></div><span>LucidCore</span></div>
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="#what">What We Do</a></li>
+          <li><a href="#products">Our Products</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">Light/Dark</button>
+    </div>
+  </header>  <div class="hero-wrap">
+    <section class="hero">
+      <h1>Building Apps and Ideas<br/>for the Future</h1>
+      <p>At LucidCore Labs, we create innovative apps and digital products, and we manage a connected ecosystem with a unified currency so users can move value across experiences.</p>
+      <div class="cta"><a class="btn" href="#contact">Learn More</a></div>
+      <div class="strip">
+        <div class="tile"><h4>Real‑time Metrics</h4><p class="muted">Live dashboards for adoption, spend, and creator payouts.</p></div>
+        <div class="tile"><h4>Trusted Payments</h4><p class="muted">USD‑pegged balance with instant swaps to app coins.</p></div>
+        <div class="tile"><h4>Gateways & Growth</h4><p class="muted">Partners, issuing roadmap, and referral tiers.</p></div>
+      </div>
+    </section>
+  </div>  <main>
+    <section id="what" class="container">
+      <p class="eyebrow">What We Do</p>
+      <h2 class="title">We build products, run the ecosystem, and operate the currency layer</h2>
+      <div class="grid3">
+        <div class="card">
+          <div class="ic" aria-hidden>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
+          </div>
+          <h3>Build Products</h3>
+          <p class="muted">Design + ship consumer apps, creator tools, and games from concept to store.</p>
+        </div>
+        <div class="card">
+          <div class="ic" aria-hidden>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          </div>
+          <h3>Operate Ecosystem</h3>
+          <p class="muted">Single account follows users across apps with shared entitlements and referrals.</p>
+        </div>
+        <div class="card">
+          <div class="ic" aria-hidden>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h16M12 4v16"/></svg>
+          </div>
+          <h3>Currency Layer</h3>
+          <p class="muted">Portable USD‑pegged balance + app coins (skins) for local experiences.</p>
+        </div>
+      </div>
+    </section><section id="products">
+  <div class="container">
+    <p class="eyebrow">Our Products</p>
+    <div class="cards">
+      <!-- SnowApp card links out to snowapp.net -->
+      <article class="product">
+        <a href="https://snowapp.net" target="_blank" rel="noopener noreferrer" aria-label="Open SnowApp website">
+          <span class="badge">Live</span>
+          <div class="icon-wrap" aria-hidden>
+            <img class="app-icon" src="/images/snowapp-icon.png" alt="SnowApp icon" />
+          </div>
+          <h3 style="margin:8px 0 6px">SnowApp</h3>
+          <p class="muted">Payments made easy — the financial backbone of the ecosystem.</p>
+        </a>
+      </article>
 
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-  </script>
-</body>
+      <!-- PeekR card uses pink→lavender→peach gradient on dark -->
+      <article class="product">
+        <a href="#" aria-label="PeekR (preview)">
+          <span class="badge">In Progress</span>
+          <div class="icon-wrap" aria-hidden style="background:linear-gradient(135deg, var(--peekr-a), var(--peekr-b) 55%, var(--peekr-c))">
+            <img class="app-icon" src="/images/peekr-icon.png" alt="PeekR icon" />
+          </div>
+          <h3 style="margin:8px 0 6px">PeekR</h3> style="margin:8px 0 6px">PeekR</h3>
+          <p class="muted">Creator monetization — wishlists, tips, shops. (New palette: peach • pink • lavender)</p>
+        </a>
+      </article>
+
+      <!-- Unrevealed product teaser -->
+      <article class="product">
+        <a href="#" aria-label="Unrevealed Project">
+          <span class="badge">Unrevealed</span>
+          <div class="icon-wrap" aria-hidden>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path d="M12 3l3.09 6.26L22 10l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.87 2 10l6.91-.74L12 3z"/>
+            </svg>
+          </div>
+          <h3 style="margin:8px 0 6px">Future App</h3>
+          <p class="muted">Coming soon — details under wraps.</p>
+        </a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <h2 class="title">Contact Us</h2>
+    <div class="card">
+      <form onsubmit="event.preventDefault(); this.reset(); alert('Thanks! We\'ll be in touch.');">
+        <label>Name<br><input required placeholder="Your name"></label>
+        <label>Email<br><input type="email" required placeholder="you@domain.com"></label>
+        <label>Message<br><textarea rows="5" required placeholder="Tell us about the idea"></textarea></label>
+        <button class="btn" type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+  </main>  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center">
+      <div class="brand" style="opacity:.9"><div class="logo" aria-hidden></div><span>LucidCore</span></div>
+      <small>© <span id="y"></span> LucidCore Labs LLC — All rights reserved.</small>
+    </div>
+  </footer>  <script>
+    // year
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // theme toggle with localStorage
+    const root = document.documentElement;
+    const btn = document.getElementById('themeToggle');
+    const saved = localStorage.getItem('lcl-theme');
+    if(saved){ document.documentElement.setAttribute('data-theme', saved); }
+    btn.addEventListener('click', ()=>{
+      const cur = document.documentElement.getAttribute('data-theme');
+      const next = cur === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('lcl-theme', next);
+    });
+  </script></body>
 </html>
